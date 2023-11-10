@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-11-10T18:19:37.624Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="sxFrKTYfUfMCYT8H_-d3" version="22.1.0" type="github">
+<mxfile host="app.diagrams.net" modified="2023-11-10T18:31:10.385Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="fbWn8tRmSfz758vycQ8S" version="22.1.0" type="github">
   <diagram name="페이지-1" id="3mAdSl6wc2GH-BVhO2YJ">
-    <mxGraphModel dx="1312" dy="1380" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2766" dy="2011" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -22,13 +22,13 @@
         <mxCell id="wuapO2CR9XQ8AqK6Wdkq-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="wuapO2CR9XQ8AqK6Wdkq-5" target="wuapO2CR9XQ8AqK6Wdkq-6">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="wuapO2CR9XQ8AqK6Wdkq-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="wuapO2CR9XQ8AqK6Wdkq-5" target="wuapO2CR9XQ8AqK6Wdkq-9">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
         <mxCell id="wuapO2CR9XQ8AqK6Wdkq-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="wuapO2CR9XQ8AqK6Wdkq-6" target="wuapO2CR9XQ8AqK6Wdkq-7">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="wuapO2CR9XQ8AqK6Wdkq-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="wuapO2CR9XQ8AqK6Wdkq-6" target="wuapO2CR9XQ8AqK6Wdkq-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wuapO2CR9XQ8AqK6Wdkq-59" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="wuapO2CR9XQ8AqK6Wdkq-6" target="wuapO2CR9XQ8AqK6Wdkq-9">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="wuapO2CR9XQ8AqK6Wdkq-6" value="적용할 이벤트 관리자" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
@@ -52,8 +52,20 @@
         <mxCell id="wuapO2CR9XQ8AqK6Wdkq-8" value="크리스마스 디데이 &lt;br&gt;할인" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="520" y="-160" width="120" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="wuapO2CR9XQ8AqK6Wdkq-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="wuapO2CR9XQ8AqK6Wdkq-9" target="wuapO2CR9XQ8AqK6Wdkq-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wuapO2CR9XQ8AqK6Wdkq-56" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="wuapO2CR9XQ8AqK6Wdkq-9" target="wuapO2CR9XQ8AqK6Wdkq-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wuapO2CR9XQ8AqK6Wdkq-57" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="wuapO2CR9XQ8AqK6Wdkq-9" target="wuapO2CR9XQ8AqK6Wdkq-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wuapO2CR9XQ8AqK6Wdkq-58" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="wuapO2CR9XQ8AqK6Wdkq-9" target="wuapO2CR9XQ8AqK6Wdkq-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="wuapO2CR9XQ8AqK6Wdkq-9" value="이벤트 적용 조건" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="730" y="150" width="120" height="60" as="geometry" />
+          <mxGeometry x="770" y="150" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="wuapO2CR9XQ8AqK6Wdkq-10" value="이벤트 배지" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="330" y="40" width="120" height="60" as="geometry" />
