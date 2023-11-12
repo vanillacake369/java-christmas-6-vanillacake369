@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-11-12T13:15:51.081Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="MotyvW88yaRi0K7x4QJq" version="22.1.0" type="github">
+<mxfile host="app.diagrams.net" modified="2023-11-12T14:57:10.682Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="N3NXhkr-T2V6FZB-ebpa" version="22.1.0" type="github">
   <diagram name="페이지-1" id="3mAdSl6wc2GH-BVhO2YJ">
-    <mxGraphModel dx="2646" dy="1927" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2501" dy="1927" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -31,16 +31,16 @@
         <mxCell id="wuapO2CR9XQ8AqK6Wdkq-6" value="적용할 할인 관리자" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="810" y="160" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="yRB9bW8s2weXg9dRPsHf-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="wuapO2CR9XQ8AqK6Wdkq-7" target="wuapO2CR9XQ8AqK6Wdkq-8">
+        <mxCell id="yRB9bW8s2weXg9dRPsHf-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="wuapO2CR9XQ8AqK6Wdkq-7" target="wuapO2CR9XQ8AqK6Wdkq-8" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="yRB9bW8s2weXg9dRPsHf-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="wuapO2CR9XQ8AqK6Wdkq-7" target="wuapO2CR9XQ8AqK6Wdkq-11">
+        <mxCell id="yRB9bW8s2weXg9dRPsHf-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="wuapO2CR9XQ8AqK6Wdkq-7" target="wuapO2CR9XQ8AqK6Wdkq-11" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="yRB9bW8s2weXg9dRPsHf-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="wuapO2CR9XQ8AqK6Wdkq-7" target="wuapO2CR9XQ8AqK6Wdkq-15">
+        <mxCell id="yRB9bW8s2weXg9dRPsHf-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="wuapO2CR9XQ8AqK6Wdkq-7" target="wuapO2CR9XQ8AqK6Wdkq-15" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="yRB9bW8s2weXg9dRPsHf-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="wuapO2CR9XQ8AqK6Wdkq-7" target="wuapO2CR9XQ8AqK6Wdkq-16">
+        <mxCell id="yRB9bW8s2weXg9dRPsHf-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="wuapO2CR9XQ8AqK6Wdkq-7" target="wuapO2CR9XQ8AqK6Wdkq-16" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="wuapO2CR9XQ8AqK6Wdkq-7" value="할인" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -118,7 +118,7 @@
         <mxCell id="wuapO2CR9XQ8AqK6Wdkq-9" value="할인 적용 조건" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1121" y="160" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="yRB9bW8s2weXg9dRPsHf-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="wuapO2CR9XQ8AqK6Wdkq-5" target="wuapO2CR9XQ8AqK6Wdkq-10">
+        <mxCell id="yRB9bW8s2weXg9dRPsHf-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="wuapO2CR9XQ8AqK6Wdkq-5" target="wuapO2CR9XQ8AqK6Wdkq-10" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
