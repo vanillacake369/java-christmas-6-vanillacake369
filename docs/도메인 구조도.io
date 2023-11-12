@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-11-12T14:25:45.127Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="1MzH8kpLGU0yADp3dQyy" version="22.1.0" type="github">
+<mxfile host="app.diagrams.net" modified="2023-11-12T14:30:14.706Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="UFj0CpwEGkPM3z62Ludh" version="22.1.0" type="github">
   <diagram name="페이지-1" id="3mAdSl6wc2GH-BVhO2YJ">
-    <mxGraphModel dx="2166" dy="1775" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2796" dy="2061" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -111,7 +111,7 @@
         <mxCell id="ddmZMhgzbiwqqRq5CENe-65" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ddmZMhgzbiwqqRq5CENe-57" target="ddmZMhgzbiwqqRq5CENe-64" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="ddmZMhgzbiwqqRq5CENe-80" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="ddmZMhgzbiwqqRq5CENe-57" target="ddmZMhgzbiwqqRq5CENe-69" edge="1">
+        <mxCell id="ddmZMhgzbiwqqRq5CENe-80" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="ddmZMhgzbiwqqRq5CENe-57" target="bFef8HWAGzw3llsR6rMR-31" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="980" y="143" as="targetPoint" />
           </mxGeometry>
@@ -146,7 +146,7 @@
         <mxCell id="ddmZMhgzbiwqqRq5CENe-68" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ddmZMhgzbiwqqRq5CENe-69" target="ddmZMhgzbiwqqRq5CENe-75" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="ddmZMhgzbiwqqRq5CENe-83" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="ddmZMhgzbiwqqRq5CENe-69" target="ddmZMhgzbiwqqRq5CENe-76" edge="1">
+        <mxCell id="ddmZMhgzbiwqqRq5CENe-83" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="bFef8HWAGzw3llsR6rMR-31" target="ddmZMhgzbiwqqRq5CENe-76" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="ddmZMhgzbiwqqRq5CENe-69" value="할인" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -229,6 +229,36 @@
         </mxCell>
         <mxCell id="bFef8HWAGzw3llsR6rMR-23" value="EventPolicy&lt;br&gt;Condtion" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="1265" y="35" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="bFef8HWAGzw3llsR6rMR-24" value="DiscountPolicy" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="995" y="265" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="bFef8HWAGzw3llsR6rMR-25" value="Christmas&lt;br&gt;DiscountPolicy" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="810" y="445" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="bFef8HWAGzw3llsR6rMR-26" value="Day&lt;br&gt;DiscountPolicy" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="440" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="bFef8HWAGzw3llsR6rMR-27" value="Weekday&lt;br&gt;DiscountPolicy" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="820" y="685" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="bFef8HWAGzw3llsR6rMR-28" value="Weekend&lt;br&gt;DiscountPolicy" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="685" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="bFef8HWAGzw3llsR6rMR-29" value="Special&lt;br&gt;DiscountPolicy" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1300" y="445" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="bFef8HWAGzw3llsR6rMR-30" value="GiftEvent" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1595" y="450" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="bFef8HWAGzw3llsR6rMR-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="bFef8HWAGzw3llsR6rMR-31" target="ddmZMhgzbiwqqRq5CENe-69">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bFef8HWAGzw3llsR6rMR-31" value="이벤트" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="920" y="113" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="bFef8HWAGzw3llsR6rMR-33" value="EventPolicy" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1035" y="83" width="90" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
