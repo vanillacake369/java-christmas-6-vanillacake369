@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-11-10T19:14:01.999Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="cWKOIBLeZB5XZR0pBXwQ" version="22.1.0" type="github">
+<mxfile host="app.diagrams.net" modified="2023-11-12T13:15:51.081Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="MotyvW88yaRi0K7x4QJq" version="22.1.0" type="github">
   <diagram name="페이지-1" id="3mAdSl6wc2GH-BVhO2YJ">
-    <mxGraphModel dx="1981" dy="1692" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2646" dy="1927" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -38,6 +38,9 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="yRB9bW8s2weXg9dRPsHf-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="wuapO2CR9XQ8AqK6Wdkq-7" target="wuapO2CR9XQ8AqK6Wdkq-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="yRB9bW8s2weXg9dRPsHf-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="wuapO2CR9XQ8AqK6Wdkq-7" target="wuapO2CR9XQ8AqK6Wdkq-16">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="wuapO2CR9XQ8AqK6Wdkq-7" value="할인" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -113,7 +116,7 @@
           <mxGeometry x="810" y="-180" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="wuapO2CR9XQ8AqK6Wdkq-9" value="할인 적용 조건" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="1130" y="-30" width="120" height="60" as="geometry" />
+          <mxGeometry x="1121" y="160" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="yRB9bW8s2weXg9dRPsHf-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="wuapO2CR9XQ8AqK6Wdkq-5" target="wuapO2CR9XQ8AqK6Wdkq-10">
           <mxGeometry relative="1" as="geometry" />
