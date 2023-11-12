@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-11-12T13:26:48.863Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="fQG2TKEvCpUba1sSrwYl" version="22.1.0" type="github">
+<mxfile host="app.diagrams.net" modified="2023-11-12T13:27:10.602Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="pnWs-IktQNaOuKlnYf44" version="22.1.0" type="github">
   <diagram name="페이지-1" id="3mAdSl6wc2GH-BVhO2YJ">
     <mxGraphModel dx="4175" dy="2685" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -183,8 +183,8 @@
         <mxCell id="ddmZMhgzbiwqqRq5CENe-79" value="적용할 할인 관리자" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="920" y="143" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="bFef8HWAGzw3llsR6rMR-1" value="Text" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="710" y="-380" width="60" height="30" as="geometry" />
+        <mxCell id="bFef8HWAGzw3llsR6rMR-1" value="OutputView" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-200" y="-270" width="60" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
