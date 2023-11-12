@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-11-12T14:57:02.162Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="VeN2DhiPyoAnQIR17y9B" version="22.1.0" type="github">
+<mxfile host="app.diagrams.net" modified="2023-11-12T16:00:07.788Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="YeTE-0O8pWpEC5DNgoL0" version="22.1.0" type="github">
   <diagram name="페이지-1" id="3mAdSl6wc2GH-BVhO2YJ">
-    <mxGraphModel dx="1981" dy="1692" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1421" dy="1691" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -18,12 +18,6 @@
         <mxCell id="ddmZMhgzbiwqqRq5CENe-1" value="사용자" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="90" y="-40" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="ddmZMhgzbiwqqRq5CENe-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="ddmZMhgzbiwqqRq5CENe-2" target="ddmZMhgzbiwqqRq5CENe-3" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="ddmZMhgzbiwqqRq5CENe-2" value="메뉴판" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="240" y="220" width="120" height="60" as="geometry" />
-        </mxCell>
         <mxCell id="ddmZMhgzbiwqqRq5CENe-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="ddmZMhgzbiwqqRq5CENe-3" target="ddmZMhgzbiwqqRq5CENe-16" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
@@ -35,9 +29,6 @@
         </mxCell>
         <mxCell id="ddmZMhgzbiwqqRq5CENe-3" value="메뉴" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="240" y="350" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="ddmZMhgzbiwqqRq5CENe-5" value="HAS-A" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="300" y="298" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="ddmZMhgzbiwqqRq5CENe-16" value="메뉴타입&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="460" width="120" height="60" as="geometry" />
@@ -60,14 +51,16 @@
         <mxCell id="ddmZMhgzbiwqqRq5CENe-20" value="방문날짜" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-110" y="90" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="ddmZMhgzbiwqqRq5CENe-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="ddmZMhgzbiwqqRq5CENe-21" target="ddmZMhgzbiwqqRq5CENe-2" edge="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="ddmZMhgzbiwqqRq5CENe-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="ddmZMhgzbiwqqRq5CENe-21" target="ddmZMhgzbiwqqRq5CENe-3" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="220" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="ddmZMhgzbiwqqRq5CENe-21" value="주문 메뉴" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="240" y="90" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="ddmZMhgzbiwqqRq5CENe-23" value="IS-A" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="325" y="168" width="50" height="30" as="geometry" />
+          <mxGeometry x="310" y="220" width="50" height="30" as="geometry" />
         </mxCell>
         <mxCell id="ddmZMhgzbiwqqRq5CENe-27" value="요일" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-250" y="198" width="120" height="60" as="geometry" />
@@ -202,9 +195,6 @@
         </mxCell>
         <mxCell id="bFef8HWAGzw3llsR6rMR-11" value="Menu" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="165" y="365" width="50" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="bFef8HWAGzw3llsR6rMR-12" value="MenuBoard" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="145" y="235" width="90" height="30" as="geometry" />
         </mxCell>
         <mxCell id="bFef8HWAGzw3llsR6rMR-13" value="OrderMenu" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="150" y="105" width="80" height="30" as="geometry" />
