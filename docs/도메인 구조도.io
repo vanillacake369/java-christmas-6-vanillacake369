@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-11-12T16:00:07.788Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="YeTE-0O8pWpEC5DNgoL0" version="22.1.0" type="github">
+<mxfile host="app.diagrams.net" modified="2023-11-12T16:03:20.523Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="lFgfLtVjoOyBQqhjBaWU" version="22.1.0" type="github">
   <diagram name="페이지-1" id="3mAdSl6wc2GH-BVhO2YJ">
-    <mxGraphModel dx="1421" dy="1691" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1545" dy="1800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -202,7 +202,7 @@
         <mxCell id="bFef8HWAGzw3llsR6rMR-14" value="OrderMenu&lt;br&gt;Validator" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="414" y="-410" width="80" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="bFef8HWAGzw3llsR6rMR-15" value="VisitDay&lt;br&gt;Validator" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="bFef8HWAGzw3llsR6rMR-15" value="Day&lt;br&gt;Validator" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="55" y="-400" width="70" height="40" as="geometry" />
         </mxCell>
         <mxCell id="bFef8HWAGzw3llsR6rMR-16" value="EventController" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
