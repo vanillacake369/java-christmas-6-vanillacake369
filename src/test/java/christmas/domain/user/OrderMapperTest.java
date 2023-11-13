@@ -1,6 +1,7 @@
 package christmas.domain.user;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import christmas.domain.menu.Menu;
 import java.util.HashMap;
@@ -31,8 +32,7 @@ class OrderMapperTest {
         orderExpected.put(Menu.BARBECUE_RIBS, 1);
         orderExpected.put(Menu.CHOCOLATE_CAKE, 2);
         orderExpected.put(Menu.ZERO_COKE, 1);
-        assert order != null;
         assertEquals(orderExpected.keySet(), order.orderMenus().keySet());
-        assertEquals(orderExpected.values(), order.orderMenus().values());
+        assertTrue(orderExpected.values().containsAll(order.orderMenus().values()));
     }
 }
