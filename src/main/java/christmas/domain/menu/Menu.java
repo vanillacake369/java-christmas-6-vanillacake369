@@ -37,4 +37,10 @@ public enum Menu {
                 .map(menu -> menu.menuName)
                 .collect(Collectors.toList());
     }
+
+    public static Menu findByMenuName(String menuName) {
+        return Arrays.stream(values())
+                .filter(menu -> menu.menuName.equals(menuName))
+                .findFirst().orElse(null);
+    }
 }
