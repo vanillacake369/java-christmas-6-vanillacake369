@@ -11,8 +11,8 @@ import java.util.Objects;
 import java.util.function.Consumer;
 import java.util.regex.Pattern;
 
-public final class MenuValidator {
-    public static Consumer<String> validateMenus = menuInput -> {
+public final class OrderValitor {
+    public static Consumer<String> validateOrders = menuInput -> {
         List<String> parsedMenuInput = MenuParser.parseByComma(menuInput);
 
         validateValidInputForm(parsedMenuInput);    // 메뉴 형식 검증
@@ -21,7 +21,7 @@ public final class MenuValidator {
         validateValidOrderCount(parsedMenuInput);   // 주문 메뉴 개수 1 이상의 숫자 검증
     };
 
-    private MenuValidator() {
+    private OrderValitor() {
     }
 
     static void validateValidInputForm(List<String> parsedMenuInput) throws IllegalArgumentException {

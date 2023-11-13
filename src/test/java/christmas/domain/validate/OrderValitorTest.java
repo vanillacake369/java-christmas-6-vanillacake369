@@ -11,7 +11,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-class MenuValidatorTest {
+class OrderValitorTest {
     public static Stream<Arguments> generateValidMenuInput() {
         return Stream.of(
                 Arguments.of(List.of("티본스테이크-1", "바비큐립-1", "초코케이크-2", "제로콜라-1"))
@@ -56,14 +56,14 @@ class MenuValidatorTest {
     @MethodSource("generateValidMenuInput")
     @DisplayName("올바른 메뉴형식인 경우, 정상처리합니다.")
     void 메뉴형식_검증_해피케이스(List<String> parsedMenuInput) {
-        assertDoesNotThrow(() -> MenuValidator.validateValidInputForm(parsedMenuInput));
+        assertDoesNotThrow(() -> OrderValitor.validateValidInputForm(parsedMenuInput));
     }
 
     @ParameterizedTest
     @MethodSource("generateValidMenuInput")
     @DisplayName("메뉴판에 있는 메뉴 입력인 경우, 정상처리합니다.")
     void 메뉴판에_있는_메뉴입력_해피케이스(List<String> parsedMenuInput) {
-        assertDoesNotThrow(() -> MenuValidator.validateValidMenu(parsedMenuInput));
+        assertDoesNotThrow(() -> OrderValitor.validateValidMenu(parsedMenuInput));
     }
 
     /*  메뉴판에 없는 메뉴 입력 검증  */
@@ -74,7 +74,7 @@ class MenuValidatorTest {
     void 메뉴형식_검증_언해피케이스(List<String> parsedMenuInput) {
         //  WHEN
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
-                () -> MenuValidator.validateValidInputForm(parsedMenuInput));
+                () -> OrderValitor.validateValidInputForm(parsedMenuInput));
         //  THEN
         assertTrue(exception.getMessage().startsWith("[ERROR]"));
         assertTrue(exception.getMessage().contains(ValidateMessage.MENU_EXCEPTION_MESSAGE.message));
@@ -86,7 +86,7 @@ class MenuValidatorTest {
     void 메뉴판에_있는_메뉴입력_언해피케이스(List<String> parsedMenuInput) {
         //  WHEN
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
-                () -> MenuValidator.validateValidMenu(parsedMenuInput));
+                () -> OrderValitor.validateValidMenu(parsedMenuInput));
         //  THEN
         assertTrue(exception.getMessage().startsWith("[ERROR]"));
         assertTrue(exception.getMessage().contains(ValidateMessage.MENU_EXCEPTION_MESSAGE.message));
@@ -98,7 +98,7 @@ class MenuValidatorTest {
     @MethodSource("generateValidMenuInput")
     @DisplayName("중복되지 않는 메뉴 입력인 경우, 정상처리합니다.")
     void 중복메뉴입력_해피케이스(List<String> parsedMenuInput) {
-        assertDoesNotThrow(() -> MenuValidator.validateDistinctOrderMenu(parsedMenuInput));
+        assertDoesNotThrow(() -> OrderValitor.validateDistinctOrderMenu(parsedMenuInput));
     }
 
     @ParameterizedTest
@@ -107,19 +107,19 @@ class MenuValidatorTest {
     void 중복메뉴입력_언해피케이스(List<String> parsedMenuInput) {
         //  WHEN
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
-                () -> MenuValidator.validateDistinctOrderMenu(parsedMenuInput));
+                () -> OrderValitor.validateDistinctOrderMenu(parsedMenuInput));
         //  THEN
         assertTrue(exception.getMessage().startsWith("[ERROR]"));
         assertTrue(exception.getMessage().contains(ValidateMessage.MENU_EXCEPTION_MESSAGE.message));
     }
 
     /*  주문 메뉴 개수 1 이상의 숫자 검증  */
-    
+
     @ParameterizedTest
     @MethodSource("generateValidMenuInput")
     @DisplayName("주문 메뉴 개수가 1 이상의 숫자인 경우, 정상처리합니다.")
     void 주문메뉴개수_해피케이스(List<String> parsedMenuInput) {
-        assertDoesNotThrow(() -> MenuValidator.validateValidOrderCount(parsedMenuInput));
+        assertDoesNotThrow(() -> OrderValitor.validateValidOrderCount(parsedMenuInput));
     }
 
     @ParameterizedTest
@@ -128,7 +128,7 @@ class MenuValidatorTest {
     void 주문메뉴개수_언해피케이스(List<String> parsedMenuInput) {
         //  WHEN
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
-                () -> MenuValidator.validateValidOrderCount(parsedMenuInput));
+                () -> OrderValitor.validateValidOrderCount(parsedMenuInput));
         //  THEN
         assertTrue(exception.getMessage().startsWith("[ERROR]"));
         assertTrue(exception.getMessage().contains(ValidateMessage.MENU_EXCEPTION_MESSAGE.message));
