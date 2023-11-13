@@ -1,5 +1,9 @@
 package christmas.domain.menu;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public enum Menu {
     MUSHROOM_SOUP(MenuType.APPETIZER, "양송이수프", 6_000L),
     TAPAS(MenuType.APPETIZER, "타파스", 8_000L),
@@ -26,5 +30,11 @@ public enum Menu {
         this.menuType = menuType;
         this.menuName = menuName;
         this.price = price;
+    }
+
+    public static List<String> getMenuNames() {
+        return Arrays.stream(values())
+                .map(menu -> menu.menuName)
+                .collect(Collectors.toList());
     }
 }
