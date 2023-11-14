@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-11-14T16:46:22.246Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="nD9EI_yaP5Q9fqZeyqdM" version="22.1.0" type="github">
+<mxfile host="app.diagrams.net" modified="2023-11-14T20:24:20.802Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="iGOToqklfuusFKFIiBNG" version="22.1.0" type="github">
   <diagram name="페이지-1" id="3mAdSl6wc2GH-BVhO2YJ">
-    <mxGraphModel dx="2192" dy="1662" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2542" dy="1858" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -106,6 +106,9 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="BFLIBUGEqfG4qJeP4-IH-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ddmZMhgzbiwqqRq5CENe-57" target="BFLIBUGEqfG4qJeP4-IH-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BFLIBUGEqfG4qJeP4-IH-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ddmZMhgzbiwqqRq5CENe-57" target="BFLIBUGEqfG4qJeP4-IH-9">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="ddmZMhgzbiwqqRq5CENe-57" value="이벤트 적용" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -269,6 +272,12 @@
         </mxCell>
         <mxCell id="BFLIBUGEqfG4qJeP4-IH-8" value="EventBatcher" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="1280" y="-240" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BFLIBUGEqfG4qJeP4-IH-9" value="이벤트 결과" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="920" y="-330" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BFLIBUGEqfG4qJeP4-IH-10" value="EventListener" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="950" y="-370" width="60" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
