@@ -1,9 +1,15 @@
 package christmas.domain.event;
 
+import christmas.domain.event.batch.EventBatch;
+import christmas.domain.event.policy.ChristmasDiscountPolicy;
+import christmas.domain.event.policy.EventPolicy;
+import christmas.domain.event.policy.GiftEvent;
+import christmas.domain.event.policy.SpecialDiscountPolicy;
+import christmas.domain.event.policy.WeekDayDiscountPolicy;
+import christmas.domain.event.policy.WeekEndDiscountPolicy;
 import christmas.domain.user.User;
 
 public class EventService {
-    private final User user;
     private final EventBatch eventBatch;
     private final EventPolicy christmasDiscountPolicy;
     private final EventPolicy weekDayDiscountPolicy;
@@ -12,7 +18,6 @@ public class EventService {
     private final EventPolicy giftEvent;
 
     public EventService(User user) {
-        this.user = user;
         this.eventBatch = new EventBatch(user);
         this.christmasDiscountPolicy = new ChristmasDiscountPolicy(user, eventBatch);
         this.weekDayDiscountPolicy = new WeekDayDiscountPolicy(user, eventBatch);
@@ -21,11 +26,7 @@ public class EventService {
         this.giftEvent = new GiftEvent(user, eventBatch);
     }
 
-    public EventResult applyEvents(User user) {
-        // event batch :: updates list of events -> event service
-        // event service apply event
-        // create requestDto
-        // print requestDto
-        return new EventResult();
+    public void applyEvents(EventResultDTO resultDTO) {
+        eventBatch.applyEventPolicies(resultDTO);
     }
 }

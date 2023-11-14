@@ -1,4 +1,4 @@
-package christmas.domain.event;
+package christmas.domain.event.batch;
 
 import christmas.domain.event.policy.Observer;
 

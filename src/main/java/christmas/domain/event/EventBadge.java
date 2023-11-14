@@ -1,4 +1,4 @@
 package christmas.domain.event;
 
-public class EventResult {
+public enum EventBadge {
 }
