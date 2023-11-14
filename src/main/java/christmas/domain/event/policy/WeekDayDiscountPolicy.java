@@ -14,7 +14,7 @@ public class WeekDayDiscountPolicy implements DayDiscountPolicy {
     }
 
     @Override
-    public void applyEvent(User user, EventResultDTO resultDTO) {
+    public void applyEvent(EventResultDTO resultDTO) {
 
     }
 }

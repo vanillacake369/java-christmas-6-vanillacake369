@@ -27,7 +27,7 @@ public class ChristmasDiscountPolicy implements EventPolicy {
     }
 
     @Override
-    public void applyEvent(User user, EventResultDTO resultDTO) {
+    public void applyEvent(EventResultDTO resultDTO) {
         Long discountPrice = getDiscountPrice(user.getVisitDay());
         resultDTO.updateAppliedEventPrice(this, discountPrice);
     }

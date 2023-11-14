@@ -15,12 +15,14 @@ public class EventBatch implements Subject {
     public EventBatch(User user) {
         this.user = user;
         this.events = new ArrayList<>();
-        notifyObservers();
     }
 
     public void applyEventPolicies(EventResultDTO eventResultDTO) {
+        // 모든 이벤트에 대해 update :: 이벤트 조건에 따라 구독실행/구독취소   
+        notifyObservers();
+        // 구독한 이벤트 별로 이벤트 적용 
         for (EventPolicy event : events) {
-            event.applyEvent(user, eventResultDTO);
+            event.applyEvent(eventResultDTO);
         }
     }
 

@@ -26,7 +26,7 @@ public class EventResultDTO {
         this.eventPreviousPrice = eventPreviousPrice;
     }
 
-    static EventResultDTO initEventResultDTO(Long eventPreviousPrice) {
+    public static EventResultDTO initEventResultDTO(Long eventPreviousPrice) {
         return new EventResultDTO(eventPreviousPrice);
     }
 

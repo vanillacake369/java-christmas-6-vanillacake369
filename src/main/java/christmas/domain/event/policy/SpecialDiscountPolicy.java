@@ -14,7 +14,7 @@ public class SpecialDiscountPolicy implements EventPolicy {
     }
 
     @Override
-    public void applyEvent(User user, EventResultDTO resultDTO) {
+    public void applyEvent(EventResultDTO resultDTO) {
 
     }
 }
