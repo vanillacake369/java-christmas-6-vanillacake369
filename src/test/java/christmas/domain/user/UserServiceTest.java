@@ -44,11 +44,11 @@ class UserServiceTest {
         User user = userService.createUser();
 
         //  THEN
-        assertEquals(user.visitDay().day(), 3);
-        assertEquals(user.visitDay().date(), "일요일");
-        assertTrue(user.order().orderMenus().keySet()
+        assertEquals(user.getVisitDay(), 3);
+        assertEquals(user.getVisitDate(), "일요일");
+        assertTrue(user.getOrderMenus().keySet()
                 .containsAll(List.of(T_BONE_STEAK, BARBECUE_RIBS, CHOCOLATE_CAKE, ZERO_COKE)));
-        assertTrue(user.order().orderMenus().values()
+        assertTrue(user.getOrderMenus().values()
                 .containsAll(List.of(1, 1, 2, 1)));
     }
 
