@@ -43,4 +43,12 @@ public enum Menu {
                 .filter(menu -> menu.menuName.equals(menuName))
                 .findFirst().orElse(null);
     }
+
+    public Long getPrice() {
+        return price;
+    }
+
+    public MenuType getMenuType() {
+        return menuType;
+    }
 }
