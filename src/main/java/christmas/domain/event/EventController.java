@@ -1,27 +1,27 @@
 package christmas.domain.event;
 
 import christmas.domain.user.User;
-import christmas.domain.user.UserService;
+import christmas.domain.view.OutputView;
 
 public class EventController {
-    private final UserService userService;
+    private final User user;
     private final EventService eventService;
 
-    public EventController(UserService userService, EventService eventService) {
-        this.userService = userService;
-        this.eventService = eventService;
+    public EventController(User user) {
+        this.user = user;
+        this.eventService = new EventService(user);
     }
 
     public void runEvent() {
-        User user = userService.createUser();
-        boolean isUserJoinable = EventJoinableChecker.isJoinable(user);
-        if (isUserJoinable) {
-            // user -> event service(subject)
-            // event service -> event batch
-            // event batch :: updates list of events -> event service
-            // event service apply event
-            // create requestDto
-            // print requestDto
+        // 이벤트 적용 결과
+        EventResult eventResult = new EventResult();
+        // 이벤트 적용 가능하다면
+        if (EventJoinableChecker.isJoinable(user)) {
+            // 이벤트 적용
+            eventResult = eventService.applyEvents(user);
         }
+
+        // 이벤트 적용 결과 출력
+        OutputView.showEventResult(user, eventResult);
     }
 }
