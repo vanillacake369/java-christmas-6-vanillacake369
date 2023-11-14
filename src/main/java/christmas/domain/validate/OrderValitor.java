@@ -52,8 +52,12 @@ public final class OrderValitor {
         boolean orderCountValidationResult = parsedMenuInput.stream()
                 .map(input -> input.split("-")[1])
                 .map(Integer::parseInt)
-                .anyMatch(orderCount -> orderCount < 1);
+                .anyMatch(OrderValitor::hasLessThenOne);
         validateByCondition(orderCountValidationResult, MENU_EXCEPTION_MESSAGE.message);
+    }
+
+    public static boolean hasLessThenOne(Integer orderCount) {
+        return orderCount < 1;
     }
 }
 
