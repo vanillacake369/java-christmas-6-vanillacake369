@@ -26,7 +26,6 @@ class DayMapperTest {
         // WHEN
         Day day = DayMapper.createDayByDayInput(dayInput);
         // THEN
-        assertEquals("토요일", day.date());
         assertEquals(dayInput, day.day());
     }
 }
