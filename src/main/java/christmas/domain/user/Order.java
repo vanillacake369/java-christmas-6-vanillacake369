@@ -9,6 +9,10 @@ import java.util.HashMap;
 
 public record Order(HashMap<Menu, Integer> orderMenus) {
     public Order {
+        validateOrder(orderMenus);
+    }
+
+    public static void validateOrder(HashMap<Menu, Integer> orderMenus) {
         boolean hasCountLessThenOne = orderMenus.values().stream()
                 .anyMatch(OrderValitor::hasLessThenOne);
         validateByCondition(hasCountLessThenOne, MENU_EXCEPTION_MESSAGE.message);

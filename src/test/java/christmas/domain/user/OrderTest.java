@@ -24,7 +24,7 @@ class OrderTest {
 
     public static Stream<Arguments> createInvalidOrder() {
         HashMap<Menu, Integer> orderMenus = new HashMap<>();
-        orderMenus.put(Menu.ZERO_COKE, -1);
+        orderMenus.put(Menu.ZERO_COKE, 0);
         return Stream.of(
                 Arguments.of(orderMenus)
         );
