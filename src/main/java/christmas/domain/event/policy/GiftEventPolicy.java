@@ -1,17 +1,17 @@
 package christmas.domain.event.policy;
 
-import static christmas.domain.event.policy.PolicyPrice.SPECIAL_DISCOUNT_PRICE;
+import static christmas.domain.menu.Menu.CHAMPAGNE;
 
 import christmas.domain.event.EventResultDTO;
 import christmas.domain.event.batch.EventBatch;
-import christmas.domain.event.policy.condition.SpecialDiscountPolicyCondition;
+import christmas.domain.event.policy.condition.GiftEventCondition;
 import christmas.domain.user.User;
 
-public class SpecialDiscountPolicy implements EventPolicy {
+public class GiftEventPolicy implements EventPolicy {
     private User user;
 
-    public SpecialDiscountPolicy(User user, EventBatch eventBatch) {
-        if (SpecialDiscountPolicyCondition.verifyCondition(user.getVisitDay())) {
+    public GiftEventPolicy(User user, EventBatch eventBatch) {
+        if (GiftEventCondition.verifyCondition(user.getPriceSum())) {
             eventBatch.registerObserver(this);
             return;
         }
@@ -25,6 +25,6 @@ public class SpecialDiscountPolicy implements EventPolicy {
 
     @Override
     public void applyEvent(EventResultDTO resultDTO) {
-        resultDTO.updateAppliedEventPrice(this, SPECIAL_DISCOUNT_PRICE.value);
+        resultDTO.updateAppliedEventPrice(this, CHAMPAGNE.getPrice());
     }
 }

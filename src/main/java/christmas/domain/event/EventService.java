@@ -3,7 +3,7 @@ package christmas.domain.event;
 import christmas.domain.event.batch.EventBatch;
 import christmas.domain.event.policy.ChristmasDiscountPolicy;
 import christmas.domain.event.policy.EventPolicy;
-import christmas.domain.event.policy.GiftEvent;
+import christmas.domain.event.policy.GiftEventPolicy;
 import christmas.domain.event.policy.SpecialDiscountPolicy;
 import christmas.domain.event.policy.WeekDayDiscountPolicy;
 import christmas.domain.event.policy.WeekEndDiscountPolicy;
@@ -23,7 +23,7 @@ public class EventService {
         this.weekDayDiscountPolicy = new WeekDayDiscountPolicy(user, eventBatch);
         this.weekEndDiscountPolicy = new WeekEndDiscountPolicy(user, eventBatch);
         this.specialDiscountPolicy = new SpecialDiscountPolicy(user, eventBatch);
-        this.giftEvent = new GiftEvent(user, eventBatch);
+        this.giftEvent = new GiftEventPolicy(user, eventBatch);
     }
 
     public void applyEvents(EventResultDTO resultDTO) {

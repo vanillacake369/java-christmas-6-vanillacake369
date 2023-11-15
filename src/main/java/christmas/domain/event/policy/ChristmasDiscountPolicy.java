@@ -1,24 +1,26 @@
 package christmas.domain.event.policy;
 
+import static christmas.domain.event.policy.PolicyPrice.CHRISTMAS_DISCOUNT_PRICE_PER_DAY;
+import static christmas.domain.event.policy.PolicyPrice.CHRISTMAS_DISCOUNT_START_PRICE;
+
 import christmas.domain.event.EventResultDTO;
 import christmas.domain.event.batch.EventBatch;
 import christmas.domain.event.policy.condition.ChristmasDiscountPolicyCondition;
 import christmas.domain.user.User;
 
 public class ChristmasDiscountPolicy implements EventPolicy {
-    private final static Long DISCOUNT_START_PRICE = 1_000L;
-    private final static Long DISCOUNT_PRICE_PER_DAY = 100L;
     private User user;
 
     public ChristmasDiscountPolicy(User user, EventBatch eventBatch) {
-        this.user = user;
         if (ChristmasDiscountPolicyCondition.verifyCondition(user.getVisitDay())) {
             eventBatch.registerObserver(this);
+            return;
         }
+        eventBatch.removeObserver(this);
     }
 
     static Long getDiscountPrice(int visitDay) {
-        return DISCOUNT_START_PRICE + DISCOUNT_PRICE_PER_DAY * (visitDay - 1);
+        return CHRISTMAS_DISCOUNT_START_PRICE.value + CHRISTMAS_DISCOUNT_PRICE_PER_DAY.value * (visitDay - 1);
     }
 
     @Override
