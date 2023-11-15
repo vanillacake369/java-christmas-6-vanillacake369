@@ -1,13 +1,14 @@
 package christmas.domain.event.policy.condition;
 
-public final class ChristmasDiscountPolicyCondition {
-    private final static int CHRISTMAS_DISCOUNT_START_DAY = 1;
-    private final static int CHRISTMAS_DISCOUNT_END_DAY = 25;
+import static christmas.domain.event.policy.condition.PolicyConditionThreshold.CHRISTMAS_DISCOUNT_END_DAY;
+import static christmas.domain.event.policy.condition.PolicyConditionThreshold.CHRISTMAS_DISCOUNT_START_DAY;
 
+public final class ChristmasDiscountPolicyCondition {
     private ChristmasDiscountPolicyCondition() {
     }
 
     public static boolean verifyCondition(int visitDay) {
-        return CHRISTMAS_DISCOUNT_START_DAY <= visitDay && visitDay <= CHRISTMAS_DISCOUNT_END_DAY;
+        return CHRISTMAS_DISCOUNT_START_DAY.value <= visitDay
+                && visitDay <= CHRISTMAS_DISCOUNT_END_DAY.value;
     }
 }
