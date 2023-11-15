@@ -1,12 +1,12 @@
 package christmas.domain.event;
 
 import christmas.domain.event.batch.EventBatch;
-import christmas.domain.event.policy.ChristmasDiscountPolicy;
 import christmas.domain.event.policy.EventPolicy;
 import christmas.domain.event.policy.GiftEventPolicy;
-import christmas.domain.event.policy.SpecialDiscountPolicy;
-import christmas.domain.event.policy.WeekDayDiscountPolicy;
-import christmas.domain.event.policy.WeekEndDiscountPolicy;
+import christmas.domain.event.policy.discount.ChristmasDiscountPolicy;
+import christmas.domain.event.policy.discount.SpecialDiscountPolicy;
+import christmas.domain.event.policy.discount.WeekDayDiscountPolicy;
+import christmas.domain.event.policy.discount.WeekEndDiscountPolicy;
 import christmas.domain.user.User;
 
 public class EventService {

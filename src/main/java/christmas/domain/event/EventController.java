@@ -24,6 +24,7 @@ public class EventController {
 
         // 이벤트 결과 업데이트
         eventResultDto.updateEventResult(user);
+
         // 이벤트 적용 결과 출력
         OutputView.showEventResult(user.getVisitDay(), eventResultDto);
     }

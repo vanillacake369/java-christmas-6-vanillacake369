@@ -1,6 +1,8 @@
 package christmas.domain.event;
 
+import christmas.domain.event.policy.EventBadge;
 import christmas.domain.event.policy.EventPolicy;
+import christmas.domain.event.policy.discount.DiscountPolicy;
 import christmas.domain.menu.Menu;
 import christmas.domain.user.Order;
 import christmas.domain.user.User;
@@ -18,12 +20,16 @@ public class EventResultDTO {
     private Order order = null;
     //  할인 후 총 주문 금액
     private Long eventAfterPriceSum = 0L;
-    // 할인 금액
+    // 총 혜택 금액
     private Long benefitPriceSum = 0L;
-    //  총 혜택 금액
+    //  총 할인 금액
     private Long discountPriceSum = 0L;
     //  12월 이벤트 배지
     private EventBadge eventBadge = null;
+
+    public Long getDiscountPriceSum() {
+        return discountPriceSum;
+    }
 
     public HashMap<Menu, Integer> getGiveawayMenus() {
         return giveawayMenus;
@@ -53,7 +59,7 @@ public class EventResultDTO {
         return appliedDiscountPrices;
     }
 
-    public void putGiveAwayMenus(Menu menu, int count) {
+    public void putGiveAwayMenus(Menu menu, Integer count) {
         this.giveawayMenus.put(menu, count);
     }
 
@@ -79,17 +85,17 @@ public class EventResultDTO {
     void updateDiscountPriceSum() {
         Set<EventPolicy> eventPolicies = appliedDiscountPrices.keySet();
         for (EventPolicy policy : eventPolicies) {
-            this.discountPriceSum += appliedDiscountPrices.get(policy);
+            if (policy instanceof DiscountPolicy) {
+                discountPriceSum += appliedDiscountPrices.get(policy);
+            }
         }
     }
 
     void updateBenefitPriceSum() {
-        Long giftAwayPrice = giveawayMenus.keySet()
-                .stream()
-                .map(Menu::getPrice)
-                .reduce(Long::sum)
-                .orElse(0L);
-        this.benefitPriceSum = discountPriceSum + giftAwayPrice;
+        Set<EventPolicy> eventPolicies = appliedDiscountPrices.keySet();
+        for (EventPolicy policy : eventPolicies) {
+            benefitPriceSum += appliedDiscountPrices.get(policy);
+        }
     }
 
     void updateEventAfterPriceSum() {

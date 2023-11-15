@@ -1,4 +1,4 @@
-package christmas.domain.event.policy;
+package christmas.domain.event.policy.discount;
 
 import static christmas.domain.event.policy.PolicyPrice.CHRISTMAS_DISCOUNT_PRICE_PER_DAY;
 import static christmas.domain.event.policy.PolicyPrice.CHRISTMAS_DISCOUNT_START_PRICE;
@@ -6,21 +6,19 @@ import static christmas.domain.event.policy.PolicyPrice.CHRISTMAS_DISCOUNT_START
 import christmas.domain.event.EventResultDTO;
 import christmas.domain.event.batch.EventBatch;
 import christmas.domain.event.policy.condition.ChristmasDiscountPolicyCondition;
+import christmas.domain.user.Day;
 import christmas.domain.user.User;
 
-public class ChristmasDiscountPolicy implements EventPolicy {
+public class ChristmasDiscountPolicy implements DiscountPolicy {
     private User user;
 
     public ChristmasDiscountPolicy(User user, EventBatch eventBatch) {
+        this.user = user;
         if (ChristmasDiscountPolicyCondition.verifyCondition(user.getVisitDay())) {
             eventBatch.registerObserver(this);
             return;
         }
         eventBatch.removeObserver(this);
-    }
-
-    static Long getDiscountPrice(int visitDay) {
-        return CHRISTMAS_DISCOUNT_START_PRICE.value + CHRISTMAS_DISCOUNT_PRICE_PER_DAY.value * (visitDay - 1);
     }
 
     @Override
@@ -30,12 +28,19 @@ public class ChristmasDiscountPolicy implements EventPolicy {
 
     @Override
     public void applyEvent(EventResultDTO resultDTO) {
-        Long discountPrice = getDiscountPrice(user.getVisitDay());
+        Long discountPrice = getDiscountPrice(user.visitDay());
         resultDTO.updateAppliedEventPrice(this, discountPrice);
     }
 
     @Override
     public String getPolicyName() {
         return "크리스마스 디데이 할인";
+    }
+
+    @Override
+    public Long getDiscountPrice(Day day) {
+        return CHRISTMAS_DISCOUNT_START_PRICE.value
+                + CHRISTMAS_DISCOUNT_PRICE_PER_DAY.value
+                * (day.day() - 1);
     }
 }

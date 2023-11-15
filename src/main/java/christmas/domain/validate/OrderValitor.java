@@ -39,7 +39,8 @@ public final class OrderValitor {
         validateByCondition(menuValidationResult, MENU_EXCEPTION_MESSAGE.message);
     }
 
-    static void validateDistinctOrderMenu(List<String> parsedMenuInput) throws IllegalArgumentException {
+    static void
+    validateDistinctOrderMenu(List<String> parsedMenuInput) throws IllegalArgumentException {
         List<String> distinctMenuInput = parsedMenuInput.stream()
                 .map(input -> input.split("-")[0])
                 .distinct()

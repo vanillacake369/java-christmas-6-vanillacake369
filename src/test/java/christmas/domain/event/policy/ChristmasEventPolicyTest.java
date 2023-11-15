@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import christmas.domain.event.EventResultDTO;
 import christmas.domain.event.batch.EventBatch;
+import christmas.domain.event.policy.discount.ChristmasDiscountPolicy;
 import christmas.domain.menu.Menu;
 import christmas.domain.user.Day;
 import christmas.domain.user.Order;
@@ -32,7 +33,7 @@ class ChristmasEventPolicyTest {
     }
 
     private static User createUser() {
-        Day day = new Day(3, "금요일");
+        Day day = new Day(3, "일요일");
         HashMap<Menu, Integer> orderMenus = new HashMap<>();
         orderMenus.put(T_BONE_STEAK, 1);
         orderMenus.put(BARBECUE_RIBS, 1);
@@ -53,12 +54,12 @@ class ChristmasEventPolicyTest {
     @DisplayName("1,000원으로 시작하여 크리스마스가 다가올수록 날마다 할인 금액이 100원씩 증가합니다.")
     void 크리스마스할인금액_계산() {
         // GIVEN
-        int day1 = 1;
-        int day25 = 25;
+        Day day1 = new Day(1, "금요일");
+        Day day25 = new Day(25, "월요일");
 
         // WHEN
-        Long discountPrice1 = ChristmasDiscountPolicy.getDiscountPrice(day1);
-        Long discountPrice25 = ChristmasDiscountPolicy.getDiscountPrice(day25);
+        Long discountPrice1 = christmasDiscountPolicy.getDiscountPrice(day1);
+        Long discountPrice25 = christmasDiscountPolicy.getDiscountPrice(day25);
 
         // THEN
         assertEquals(1_000L, discountPrice1);

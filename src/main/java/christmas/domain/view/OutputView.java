@@ -1,8 +1,8 @@
 package christmas.domain.view;
 
 import christmas.domain.calendar.EventTime;
-import christmas.domain.event.EventBadge;
 import christmas.domain.event.EventResultDTO;
+import christmas.domain.event.policy.EventBadge;
 import christmas.domain.menu.Menu;
 import java.text.DecimalFormat;
 import java.util.HashMap;

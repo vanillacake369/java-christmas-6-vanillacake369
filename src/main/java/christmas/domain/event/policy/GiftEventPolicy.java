@@ -28,6 +28,7 @@ public class GiftEventPolicy implements EventPolicy {
 
     @Override
     public void applyEvent(EventResultDTO resultDTO) {
+        resultDTO.updateAppliedEventPrice(this, GIFT.getPrice());
         resultDTO.putGiveAwayMenus(GIFT, GIFT_COUNT);
     }
 

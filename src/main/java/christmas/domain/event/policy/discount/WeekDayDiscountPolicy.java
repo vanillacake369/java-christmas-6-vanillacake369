@@ -1,16 +1,18 @@
-package christmas.domain.event.policy;
+package christmas.domain.event.policy.discount;
 
 import static christmas.domain.event.policy.PolicyPrice.DAY_DISCOUNT_PRICE;
 
 import christmas.domain.event.EventResultDTO;
 import christmas.domain.event.batch.EventBatch;
 import christmas.domain.event.policy.condition.WeekDayPolicyCondition;
+import christmas.domain.user.Day;
 import christmas.domain.user.User;
 
-public class WeekDayDiscountPolicy implements EventPolicy {
+public class WeekDayDiscountPolicy implements DiscountPolicy {
     private User user;
 
     public WeekDayDiscountPolicy(User user, EventBatch eventBatch) {
+        this.user = user;
         if (WeekDayPolicyCondition.verifyCondition(user.getVisitDate())) {
             eventBatch.registerObserver(this);
             return;
@@ -25,12 +27,22 @@ public class WeekDayDiscountPolicy implements EventPolicy {
 
     @Override
     public void applyEvent(EventResultDTO resultDTO) {
-        int dessertMenuCount = user.getDessertMenuCount();
-        resultDTO.updateAppliedEventPrice(this, DAY_DISCOUNT_PRICE.value * dessertMenuCount);
+        Long discountPrice = getDiscountPrice(user.visitDay());
+        resultDTO.updateAppliedEventPrice(this, discountPrice);
     }
 
     @Override
     public String getPolicyName() {
         return "평일 할인";
+    }
+
+    @Override
+    public Long getDiscountPrice(Day day) {
+        long discountPrice = 0L;
+        if (WeekDayPolicyCondition.verifyCondition(day.date())) {
+            int dessertMenuCount = user.getDessertMenuCount();
+            discountPrice = DAY_DISCOUNT_PRICE.value * dessertMenuCount;
+        }
+        return discountPrice;
     }
 }
