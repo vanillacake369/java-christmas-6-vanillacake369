@@ -10,6 +10,7 @@ import christmas.domain.event.policy.WeekEndDiscountPolicy;
 import christmas.domain.user.User;
 
 public class EventService {
+    private final User user;
     private final EventBatch eventBatch;
     private final EventPolicy christmasDiscountPolicy;
     private final EventPolicy weekDayDiscountPolicy;
@@ -18,6 +19,7 @@ public class EventService {
     private final EventPolicy giftEvent;
 
     public EventService(User user) {
+        this.user = user;
         this.eventBatch = new EventBatch(user);
         this.christmasDiscountPolicy = new ChristmasDiscountPolicy(user, eventBatch);
         this.weekDayDiscountPolicy = new WeekDayDiscountPolicy(user, eventBatch);
@@ -27,6 +29,9 @@ public class EventService {
     }
 
     public void applyEvents(EventResultDTO resultDTO) {
+        // 할인 적용
         eventBatch.applyEventPolicies(resultDTO);
+        // 이벤트 결과 최종 업데이트
+        resultDTO.updateEventResult(user);
     }
 }

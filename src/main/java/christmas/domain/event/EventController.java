@@ -14,13 +14,14 @@ public class EventController {
 
     public void runEvent() {
         // 이벤트 적용 결과
-        EventResultDTO eventResultDto = EventResultDTO.initEventResultDTO(user.getPriceSum());
+        EventResultDTO eventResultDto = new EventResultDTO();
+
         // 이벤트 적용 가능하다면
         if (EventJoinableChecker.isJoinable(user)) {
             // 이벤트 적용
             eventService.applyEvents(eventResultDto);
         }
-
+        
         // 이벤트 적용 결과 출력
         OutputView.showEventResult(user, eventResultDto);
     }

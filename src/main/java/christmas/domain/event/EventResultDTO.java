@@ -1,64 +1,103 @@
 package christmas.domain.event;
 
-import static christmas.domain.menu.Menu.CHAMPAGNE;
-
 import christmas.domain.event.policy.EventPolicy;
 import christmas.domain.menu.Menu;
+import christmas.domain.user.Order;
+import christmas.domain.user.User;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Set;
 
 public class EventResultDTO {
-    //  할인 전 총 주문 금액
-    private final Long eventPreviousPrice;
     //  증정 메뉴
     private final List<Menu> giveawayMenus = new ArrayList<>();
     //  혜택 내역
-    private final HashMap<EventPolicy, Long> appliedEventPrice = new HashMap<>();
+    private final HashMap<EventPolicy, Long> appliedDiscountPrices = new HashMap<>();
+    //  할인 전 총 주문 금액
+    private Long eventPreviousPriceSum = 0L;
+    //  주문메뉴
+    private Order order = null;
+    //  할인 후 총 주문 금액
+    private Long eventAfterPriceSum = 0L;
+    // 할인 금액
+    private Long benefitPriceSum = 0L;
     //  총 혜택 금액
-    private Integer eventPriceSum;
-    //  할인 후 예상 결제 금액
-    private Long eventAfterPrice;
+    private Long discountPriceSum = 0L;
     //  12월 이벤트 배지
-    private EventBadge eventBadge;
-
-    private EventResultDTO(Long eventPreviousPrice) {
-        this.eventPreviousPrice = eventPreviousPrice;
-    }
-
-    public static EventResultDTO initEventResultDTO(Long eventPreviousPrice) {
-        return new EventResultDTO(eventPreviousPrice);
-    }
-
-    public void putGiveAwayMenus() {
-        this.giveawayMenus.add(CHAMPAGNE);
-    }
-
-    public void updateAppliedEventPrice(EventPolicy policy, Long price) {
-        appliedEventPrice.put(policy, price);
-    }
-
-    public Long getEventPreviousPrice() {
-        return eventPreviousPrice;
-    }
+    private EventBadge eventBadge = null;
 
     public List<Menu> getGiveawayMenus() {
         return giveawayMenus;
     }
 
-    public HashMap<EventPolicy, Long> getAppliedEventPrice() {
-        return appliedEventPrice;
+    public Long getEventPreviousPriceSum() {
+        return eventPreviousPriceSum;
     }
 
-    public Integer getEventPriceSum() {
-        return eventPriceSum;
+    public Order getOrder() {
+        return order;
     }
 
-    public Long getEventAfterPrice() {
-        return eventAfterPrice;
+    public Long getEventAfterPriceSum() {
+        return eventAfterPriceSum;
+    }
+
+    public Long getBenefitPriceSum() {
+        return benefitPriceSum;
     }
 
     public EventBadge getEventBadge() {
         return eventBadge;
+    }
+
+    public HashMap<EventPolicy, Long> getAppliedDiscountPrices() {
+        return appliedDiscountPrices;
+    }
+
+    public void putGiveAwayMenus(Menu menu) {
+        this.giveawayMenus.add(menu);
+    }
+
+    public void updateAppliedEventPrice(EventPolicy policy, Long price) {
+        appliedDiscountPrices.put(policy, price);
+    }
+
+    public void updateEventResult(User user) {
+        // 주문 메뉴 목록
+        this.order = user.order();
+        // 할인 전 총 주문 금액
+        this.eventPreviousPriceSum = user.getPriceSum();
+        // 할인 금액
+        updateDiscountPriceSum();
+        // 총 혜택 금액
+        updateBenefitPriceSum();
+        // 할인 후 총 주문 금액
+        updateEventAfterPriceSum();
+        // 12월 이벤트 배지
+        updateEventBadge();
+    }
+
+    void updateDiscountPriceSum() {
+        Set<EventPolicy> eventPolicies = appliedDiscountPrices.keySet();
+        for (EventPolicy policy : eventPolicies) {
+            this.discountPriceSum += appliedDiscountPrices.get(policy);
+        }
+    }
+
+    void updateBenefitPriceSum() {
+        Long giftAwayPrice = giveawayMenus.stream()
+                .map(Menu::getPrice)
+                .reduce(Long::sum)
+                .orElse(0L);
+        this.benefitPriceSum = discountPriceSum + giftAwayPrice;
+    }
+
+    void updateEventAfterPriceSum() {
+        this.eventAfterPriceSum = this.eventPreviousPriceSum - this.discountPriceSum;
+    }
+
+    void updateEventBadge() {
+        this.eventBadge = EventBadge.getBadge(benefitPriceSum);
     }
 }

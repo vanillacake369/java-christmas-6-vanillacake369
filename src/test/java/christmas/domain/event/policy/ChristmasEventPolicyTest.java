@@ -21,12 +21,11 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-class ChristmasDiscountPolicyTest {
+class ChristmasEventPolicyTest {
     private ChristmasDiscountPolicy christmasDiscountPolicy;
 
     public static Stream<Arguments> createUserAndEventResultDto() {
-        User user = createUser();
-        EventResultDTO eventResultDto = EventResultDTO.initEventResultDTO(user.getPriceSum());
+        EventResultDTO eventResultDto = new EventResultDTO();
         return Stream.of(
                 Arguments.of(eventResultDto)
         );
@@ -74,6 +73,6 @@ class ChristmasDiscountPolicyTest {
         christmasDiscountPolicy.applyEvent(resultDTO);
 
         // THEN
-        assertEquals(resultDTO.getAppliedEventPrice().get(christmasDiscountPolicy), 1_200L);
+        assertEquals(resultDTO.getAppliedDiscountPrices().get(christmasDiscountPolicy), 1_200L);
     }
 }

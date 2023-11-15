@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 public enum Menu {
     MUSHROOM_SOUP(MenuType.APPETIZER, "양송이수프", 6_000L),
-    TAPAS(MenuType.APPETIZER, "타파스", 8_000L),
+    TAPAS(MenuType.APPETIZER, "타파스", 5_500L),
     CAESAR_SALAD(MenuType.APPETIZER, "시저샐러드", 8_000L),
 
     T_BONE_STEAK(MenuType.MAIN, "티본스테이크", 55_000L),

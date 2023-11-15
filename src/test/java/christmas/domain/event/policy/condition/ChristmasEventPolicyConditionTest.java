@@ -7,7 +7,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-class ChristmasDiscountPolicyConditionTest {
+class ChristmasEventPolicyConditionTest {
     @ParameterizedTest
     @ValueSource(ints = {1, 15, 25})
     @DisplayName("2023.12.1 ~ 2023.12.25 기간 내라면 크리스마스 디데이 할인 적용")
