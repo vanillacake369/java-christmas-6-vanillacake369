@@ -63,12 +63,4 @@ public record User(Day visitDay, Order order) {
     public String getVisitDate() {
         return visitDay.date();
     }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "visitDay=" + visitDay +
-                ", order=" + order +
-                '}';
-    }
 }

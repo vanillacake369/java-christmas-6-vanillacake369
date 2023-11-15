@@ -70,7 +70,7 @@ class EventServiceTest {
         eventResultDTO.updateEventResult(user);
 
         // THEN
-        HashMap<EventPolicy, Long> appliedDiscountPrices = eventResultDTO.getAppliedDiscountPrices();
+        HashMap<EventPolicy, Long> appliedDiscountPrices = eventResultDTO.getAppliedEventPolicies();
         Set<EventPolicy> discountPolicies = appliedDiscountPrices.keySet();
         Collection<Long> eventPrices = appliedDiscountPrices.values();
 
@@ -101,10 +101,10 @@ class EventServiceTest {
         eventResultDTO.updateEventResult(user);
 
         // THEN
-        HashMap<EventPolicy, Long> appliedDiscountPrices = eventResultDTO.getAppliedDiscountPrices();
+        HashMap<EventPolicy, Long> appliedDiscountPrices = eventResultDTO.getAppliedEventPolicies();
         Set<EventPolicy> discountPolicies = appliedDiscountPrices.keySet();
         Collection<Long> eventPrices = appliedDiscountPrices.values();
-        
+
         assertTrue(eventResultDTO.getGiveawayMenus().containsKey(CHAMPAGNE));
         assertTrue(discountPolicies.stream().anyMatch(ChristmasDiscountPolicy.class::isInstance));
         assertTrue(discountPolicies.stream().anyMatch(WeekEndDiscountPolicy.class::isInstance));

@@ -13,7 +13,7 @@ public class EventResultDTO {
     //  증정 메뉴
     private final HashMap<Menu, Integer> giveawayMenus = new HashMap<>();
     //  혜택 내역
-    private final HashMap<EventPolicy, Long> appliedDiscountPrices = new HashMap<>();
+    private final HashMap<EventPolicy, Long> appliedEventPolicies = new HashMap<>();
     //  할인 전 총 주문 금액
     private Long eventPreviousPriceSum = 0L;
     //  주문메뉴
@@ -55,8 +55,8 @@ public class EventResultDTO {
         return eventBadge;
     }
 
-    public HashMap<EventPolicy, Long> getAppliedDiscountPrices() {
-        return appliedDiscountPrices;
+    public HashMap<EventPolicy, Long> getAppliedEventPolicies() {
+        return appliedEventPolicies;
     }
 
     public void putGiveAwayMenus(Menu menu, Integer count) {
@@ -64,7 +64,7 @@ public class EventResultDTO {
     }
 
     public void updateAppliedEventPrice(EventPolicy policy, Long price) {
-        appliedDiscountPrices.put(policy, price);
+        appliedEventPolicies.put(policy, price);
     }
 
     public void updateEventResult(User user) {
@@ -83,18 +83,18 @@ public class EventResultDTO {
     }
 
     void updateDiscountPriceSum() {
-        Set<EventPolicy> eventPolicies = appliedDiscountPrices.keySet();
+        Set<EventPolicy> eventPolicies = appliedEventPolicies.keySet();
         for (EventPolicy policy : eventPolicies) {
             if (policy instanceof DiscountPolicy) {
-                discountPriceSum += appliedDiscountPrices.get(policy);
+                discountPriceSum += appliedEventPolicies.get(policy);
             }
         }
     }
 
     void updateBenefitPriceSum() {
-        Set<EventPolicy> eventPolicies = appliedDiscountPrices.keySet();
+        Set<EventPolicy> eventPolicies = appliedEventPolicies.keySet();
         for (EventPolicy policy : eventPolicies) {
-            benefitPriceSum += appliedDiscountPrices.get(policy);
+            benefitPriceSum += appliedEventPolicies.get(policy);
         }
     }
 

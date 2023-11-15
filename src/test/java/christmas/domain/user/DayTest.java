@@ -5,17 +5,24 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
 class DayTest {
-    @ParameterizedTest
-    @ValueSource(ints = {1, 15, 31})
+    @Test
     @DisplayName("1이상 31이하의 날짜 입력에 대해 정상처리합니다.")
-    void 날짜입력_해피케이스(int dayInput) {
+    void 날짜입력_해피케이스() {
+        // GIVEN
+        int dayInput1 = 1;
+        int dayInput15 = 15;
+        int dayInput31 = 31;
+
         // WHEN
         // THEN
-        assertDoesNotThrow(() -> new Day(dayInput, "월요일"));
+        assertDoesNotThrow(() -> new Day(dayInput1, "금요일"));
+        assertDoesNotThrow(() -> new Day(dayInput15, "금요일"));
+        assertDoesNotThrow(() -> new Day(dayInput31, "일요일"));
     }
 
     @ParameterizedTest

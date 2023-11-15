@@ -19,7 +19,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 class EventJoinableCheckerTest {
     public static Stream<Arguments> createPriceHappyCase() {
-        Day day = new Day(3, "금요일");
+        Day day = new Day(3, "일요일");
         HashMap<Menu, Integer> orderMenus = new HashMap<>();
         orderMenus.put(T_BONE_STEAK, 1);
         Order order = new Order(orderMenus);
@@ -31,7 +31,7 @@ class EventJoinableCheckerTest {
     }
 
     public static Stream<Arguments> createPriceUnhappyCase() {
-        Day day = new Day(3, "금요일");
+        Day day = new Day(3, "일요일");
         HashMap<Menu, Integer> orderMenus = new HashMap<>();
         orderMenus.put(TAPAS, 1);
         Order order = new Order(orderMenus);
@@ -43,7 +43,7 @@ class EventJoinableCheckerTest {
     }
 
     public static Stream<Arguments> createOrderHappyCase() {
-        Day day = new Day(3, "금요일");
+        Day day = new Day(3, "일요일");
         HashMap<Menu, Integer> orderMenus = new HashMap<>();
         orderMenus.put(T_BONE_STEAK, 1);
         orderMenus.put(ZERO_COKE, 1);
@@ -56,7 +56,7 @@ class EventJoinableCheckerTest {
     }
 
     public static Stream<Arguments> createOrderUnhappyCase() {
-        Day day = new Day(3, "금요일");
+        Day day = new Day(3, "일요일");
         HashMap<Menu, Integer> orderMenus = new HashMap<>();
         orderMenus.put(ZERO_COKE, 1);
         Order order = new Order(orderMenus);
@@ -68,7 +68,7 @@ class EventJoinableCheckerTest {
     }
 
     public static Stream<Arguments> createOrderCountHappyCase() {
-        Day day = new Day(3, "금요일");
+        Day day = new Day(3, "일요일");
         HashMap<Menu, Integer> orderMenus = new HashMap<>();
         orderMenus.put(T_BONE_STEAK, 20);
         Order order = new Order(orderMenus);
@@ -80,7 +80,7 @@ class EventJoinableCheckerTest {
     }
 
     public static Stream<Arguments> createOrderCountUnhappyCase() {
-        Day day = new Day(3, "금요일");
+        Day day = new Day(3, "일요일");
         HashMap<Menu, Integer> orderMenus = new HashMap<>();
         orderMenus.put(T_BONE_STEAK, 21);
         Order order = new Order(orderMenus);

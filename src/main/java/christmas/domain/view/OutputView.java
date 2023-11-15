@@ -3,6 +3,7 @@ package christmas.domain.view;
 import christmas.domain.calendar.EventTime;
 import christmas.domain.event.EventResultDTO;
 import christmas.domain.event.policy.EventBadge;
+import christmas.domain.event.policy.EventPolicy;
 import christmas.domain.menu.Menu;
 import java.text.DecimalFormat;
 import java.util.HashMap;
@@ -62,17 +63,22 @@ public final class OutputView {
 
     private static void showBenefits(EventResultDTO eventResultDto) {
         System.out.println("<혜택 내역>");
-        // !! 구현 요망 !!
-        // !! 구현 요망 !!
-        // !! 구현 요망 !!
-        // !! 구현 요망 !!
+        HashMap<EventPolicy, Long> appliedEventPolicies = eventResultDto.getAppliedEventPolicies();
+        if (appliedEventPolicies.size() > 0) {
+            appliedEventPolicies.forEach((eventPolicy, price) -> System.out.printf("%s : -%s원%n",
+                    eventPolicy.getPolicyName(),
+                    new DecimalFormat("#,###")
+                            .format(price)));
+            return;
+        }
         System.out.println("없음");
     }
 
     private static void showDiscountPriceSum(EventResultDTO eventResultDto) {
         System.out.println("<총혜택 금액>");
         if (eventResultDto.getBenefitPriceSum() > 0) {
-            System.out.println(eventResultDto.getBenefitPriceSum());
+            System.out.printf("-%s원%n", new DecimalFormat("#,###")
+                    .format(eventResultDto.getBenefitPriceSum()));
             return;
         }
         System.out.println("없음");
@@ -80,9 +86,8 @@ public final class OutputView {
 
     private static void showEventAfterPriceSum(EventResultDTO eventResultDto) {
         System.out.println("<할인 후 예상 결제 금액>");
-        Long eventAfterPriceSum = eventResultDto.getEventAfterPriceSum();
-        String formattedAfterPriceSum = new DecimalFormat("#,###").format(eventAfterPriceSum);
-        System.out.println(formattedAfterPriceSum + "원");
+        System.out.printf("%s원%n", new DecimalFormat("#,###")
+                .format(eventResultDto.getEventAfterPriceSum()));
     }
 
     private static void showEventBadge(EventResultDTO eventResultDto) {

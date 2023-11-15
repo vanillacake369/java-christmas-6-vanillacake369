@@ -16,7 +16,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 class UserTest {
     private static Stream<Arguments> createValidUser() {
-        Day day = new Day(3, "금요일");
+        Day day = new Day(3, "일요일");
         HashMap<Menu, Integer> orderMenus = new HashMap<>();
         orderMenus.put(T_BONE_STEAK, 1);
         orderMenus.put(TAPAS, 1);
@@ -34,7 +34,7 @@ class UserTest {
     void 사용자주문_총가격_계산(User user) {
         // WHEN
         Long priceSum = user.getPriceSum();
-        Long expectedPriceSum = 55_000L + 8_000L + 35_000L;
+        Long expectedPriceSum = 55_000L + 5_500L + 35_000L;
 
         // THEN
         assertEquals(priceSum, expectedPriceSum);
@@ -44,7 +44,7 @@ class UserTest {
     @DisplayName("불변객체에 대한 -- 동일한 값에 대해 -- 동치성을 지원합니다.")
     void 동치성_테스트() {
         // GIVEN
-        Day day = new Day(3, "금요일");
+        Day day = new Day(3, "일요일");
         HashMap<Menu, Integer> orderMenus = new HashMap<>();
         orderMenus.put(T_BONE_STEAK, 1);
         orderMenus.put(TAPAS, 1);

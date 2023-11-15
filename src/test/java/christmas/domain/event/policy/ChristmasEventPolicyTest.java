@@ -74,6 +74,6 @@ class ChristmasEventPolicyTest {
         christmasDiscountPolicy.applyEvent(resultDTO);
 
         // THEN
-        assertEquals(resultDTO.getAppliedDiscountPrices().get(christmasDiscountPolicy), 1_200L);
+        assertEquals(resultDTO.getAppliedEventPolicies().get(christmasDiscountPolicy), 1_200L);
     }
 }
