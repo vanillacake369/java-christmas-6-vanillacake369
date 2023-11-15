@@ -1,4 +1,4 @@
-package christmas.domain.event.policy;
+package christmas.domain.event.policy.event;
 
 import static christmas.domain.menu.Menu.CHAMPAGNE;
 
@@ -10,10 +10,13 @@ import christmas.domain.user.User;
 
 public class GiftEventPolicy implements EventPolicy {
     private final static Menu GIFT = CHAMPAGNE;
+    private final static String POLICY_NAME = "증정 이벤트";
+
     private final static Integer GIFT_COUNT = 1;
     private User user;
 
     public GiftEventPolicy(User user, EventBatch eventBatch) {
+        this.user = user;
         if (GiftEventCondition.verifyCondition(user.getPriceSum())) {
             eventBatch.registerObserver(this);
             return;
@@ -28,12 +31,12 @@ public class GiftEventPolicy implements EventPolicy {
 
     @Override
     public void applyEvent(EventResultDTO resultDTO) {
-        resultDTO.updateAppliedEventPrice(this, GIFT.getPrice());
-        resultDTO.putGiveAwayMenus(GIFT, GIFT_COUNT);
+        resultDTO.putAppliedEventPolicy(this, GIFT.getPrice());
+        resultDTO.putGiveAwayMenu(GIFT, GIFT_COUNT);
     }
 
     @Override
     public String getPolicyName() {
-        return "증정 이벤트";
+        return POLICY_NAME;
     }
 }

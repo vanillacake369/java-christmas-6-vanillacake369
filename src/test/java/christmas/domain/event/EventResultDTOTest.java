@@ -7,12 +7,12 @@ import static christmas.domain.menu.Menu.ZERO_COKE;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import christmas.domain.event.batch.EventBatch;
-import christmas.domain.event.policy.EventPolicy;
-import christmas.domain.event.policy.GiftEventPolicy;
 import christmas.domain.event.policy.discount.ChristmasDiscountPolicy;
 import christmas.domain.event.policy.discount.DiscountPolicy;
 import christmas.domain.event.policy.discount.SpecialDiscountPolicy;
 import christmas.domain.event.policy.discount.WeekDayDiscountPolicy;
+import christmas.domain.event.policy.event.EventPolicy;
+import christmas.domain.event.policy.event.GiftEventPolicy;
 import christmas.domain.menu.Menu;
 import christmas.domain.user.Day;
 import christmas.domain.user.Order;
@@ -42,10 +42,10 @@ class EventResultDTOTest {
     }
 
     private void updateAppliedEventPrice() {
-        resultDTO.updateAppliedEventPrice(christmasDiscountPolicy, 1_200L);
-        resultDTO.updateAppliedEventPrice(weekDayDiscountPolicy, 4_046L);
-        resultDTO.updateAppliedEventPrice(specialDiscountPolicy, 1_000L);
-        resultDTO.updateAppliedEventPrice(giftEventPolicy, 25_000L);
+        resultDTO.putAppliedEventPolicy(christmasDiscountPolicy, 1_200L);
+        resultDTO.putAppliedEventPolicy(weekDayDiscountPolicy, 4_046L);
+        resultDTO.putAppliedEventPolicy(specialDiscountPolicy, 1_000L);
+        resultDTO.putAppliedEventPolicy(giftEventPolicy, 25_000L);
     }
 
     @Test

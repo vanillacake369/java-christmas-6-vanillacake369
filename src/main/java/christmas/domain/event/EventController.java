@@ -23,9 +23,9 @@ public class EventController {
         }
 
         // 이벤트 결과 업데이트
-        eventResultDto.updateEventResult(user);
+        eventResultDto.updateEventResult(user.getVisitDay(), user.getOrderMenus(), user.getPriceSum());
 
         // 이벤트 적용 결과 출력
-        OutputView.showEventResult(user.getVisitDay(), eventResultDto);
+        OutputView.showEventResult(eventResultDto);
     }
 }

@@ -1,4 +1,4 @@
-package christmas.domain.event.policy;
+package christmas.domain.event.policy.event;
 
 import christmas.domain.user.User;
 

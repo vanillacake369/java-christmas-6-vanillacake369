@@ -1,6 +1,6 @@
 package christmas.domain.event;
 
-import static christmas.domain.event.policy.EventBadge.SANTA;
+import static christmas.domain.event.EventBadge.SANTA;
 import static christmas.domain.menu.Menu.BARBECUE_RIBS;
 import static christmas.domain.menu.Menu.CHAMPAGNE;
 import static christmas.domain.menu.Menu.CHOCOLATE_CAKE;
@@ -9,12 +9,12 @@ import static christmas.domain.menu.Menu.ZERO_COKE;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import christmas.domain.event.policy.EventPolicy;
-import christmas.domain.event.policy.GiftEventPolicy;
 import christmas.domain.event.policy.discount.ChristmasDiscountPolicy;
 import christmas.domain.event.policy.discount.SpecialDiscountPolicy;
 import christmas.domain.event.policy.discount.WeekDayDiscountPolicy;
 import christmas.domain.event.policy.discount.WeekEndDiscountPolicy;
+import christmas.domain.event.policy.event.EventPolicy;
+import christmas.domain.event.policy.event.GiftEventPolicy;
 import christmas.domain.menu.Menu;
 import christmas.domain.user.Day;
 import christmas.domain.user.Order;
@@ -67,7 +67,7 @@ class EventServiceTest {
 
         // WHEN
         eventService.applyEvents(eventResultDTO);
-        eventResultDTO.updateEventResult(user);
+        eventResultDTO.updateEventResult(user.getVisitDay(), user.getOrderMenus(), user.getPriceSum());
 
         // THEN
         HashMap<EventPolicy, Long> appliedDiscountPrices = eventResultDTO.getAppliedEventPolicies();
@@ -98,7 +98,7 @@ class EventServiceTest {
 
         // WHEN
         eventService.applyEvents(eventResultDTO);
-        eventResultDTO.updateEventResult(user);
+        eventResultDTO.updateEventResult(user.getVisitDay(), user.getOrderMenus(), user.getPriceSum());
 
         // THEN
         HashMap<EventPolicy, Long> appliedDiscountPrices = eventResultDTO.getAppliedEventPolicies();

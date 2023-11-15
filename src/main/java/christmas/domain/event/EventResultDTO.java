@@ -1,11 +1,8 @@
 package christmas.domain.event;
 
-import christmas.domain.event.policy.EventBadge;
-import christmas.domain.event.policy.EventPolicy;
 import christmas.domain.event.policy.discount.DiscountPolicy;
+import christmas.domain.event.policy.event.EventPolicy;
 import christmas.domain.menu.Menu;
-import christmas.domain.user.Order;
-import christmas.domain.user.User;
 import java.util.HashMap;
 import java.util.Set;
 
@@ -14,10 +11,12 @@ public class EventResultDTO {
     private final HashMap<Menu, Integer> giveawayMenus = new HashMap<>();
     //  혜택 내역
     private final HashMap<EventPolicy, Long> appliedEventPolicies = new HashMap<>();
+    //  주문일
+    private int day = 0;
     //  할인 전 총 주문 금액
     private Long eventPreviousPriceSum = 0L;
     //  주문메뉴
-    private Order order = null;
+    private HashMap<Menu, Integer> orderMenus = null;
     //  할인 후 총 주문 금액
     private Long eventAfterPriceSum = 0L;
     // 총 혜택 금액
@@ -26,6 +25,14 @@ public class EventResultDTO {
     private Long discountPriceSum = 0L;
     //  12월 이벤트 배지
     private EventBadge eventBadge = null;
+
+    public HashMap<Menu, Integer> getOrderMenus() {
+        return orderMenus;
+    }
+
+    public int getDay() {
+        return day;
+    }
 
     public Long getDiscountPriceSum() {
         return discountPriceSum;
@@ -39,8 +46,8 @@ public class EventResultDTO {
         return eventPreviousPriceSum;
     }
 
-    public Order getOrder() {
-        return order;
+    public HashMap<Menu, Integer> getOrder() {
+        return orderMenus;
     }
 
     public Long getEventAfterPriceSum() {
@@ -59,19 +66,21 @@ public class EventResultDTO {
         return appliedEventPolicies;
     }
 
-    public void putGiveAwayMenus(Menu menu, Integer count) {
+    public void putGiveAwayMenu(Menu menu, Integer count) {
         this.giveawayMenus.put(menu, count);
     }
 
-    public void updateAppliedEventPrice(EventPolicy policy, Long price) {
+    public void putAppliedEventPolicy(EventPolicy policy, Long price) {
         appliedEventPolicies.put(policy, price);
     }
 
-    public void updateEventResult(User user) {
+    public void updateEventResult(int day, HashMap<Menu, Integer> orderMenus, Long eventPreviousPriceSum) {
+        // 주문일
+        this.day = day;
         // 주문 메뉴 목록
-        this.order = user.order();
+        this.orderMenus = orderMenus;
         // 할인 전 총 주문 금액
-        this.eventPreviousPriceSum = user.getPriceSum();
+        this.eventPreviousPriceSum = eventPreviousPriceSum;
         // 할인 금액
         updateDiscountPriceSum();
         // 총 혜택 금액

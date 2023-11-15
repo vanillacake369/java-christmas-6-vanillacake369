@@ -1,8 +1,8 @@
 package christmas.domain.event.batch;
 
 import christmas.domain.event.EventResultDTO;
-import christmas.domain.event.policy.EventPolicy;
-import christmas.domain.event.policy.Observer;
+import christmas.domain.event.policy.event.EventPolicy;
+import christmas.domain.event.policy.event.Observer;
 import christmas.domain.user.User;
 import java.util.ArrayList;
 import java.util.List;

@@ -10,6 +10,7 @@ import christmas.domain.user.Day;
 import christmas.domain.user.User;
 
 public class ChristmasDiscountPolicy implements DiscountPolicy {
+    private final static String POLICY_NAME = "크리스마스 디데이 할인";
     private User user;
 
     public ChristmasDiscountPolicy(User user, EventBatch eventBatch) {
@@ -29,12 +30,12 @@ public class ChristmasDiscountPolicy implements DiscountPolicy {
     @Override
     public void applyEvent(EventResultDTO resultDTO) {
         Long discountPrice = getDiscountPrice(user.visitDay());
-        resultDTO.updateAppliedEventPrice(this, discountPrice);
+        resultDTO.putAppliedEventPolicy(this, discountPrice);
     }
 
     @Override
     public String getPolicyName() {
-        return "크리스마스 디데이 할인";
+        return POLICY_NAME;
     }
 
     @Override
