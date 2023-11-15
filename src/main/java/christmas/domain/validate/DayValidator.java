@@ -1,7 +1,7 @@
 package christmas.domain.validate;
 
-import static christmas.domain.user.EventTime.MONTH;
-import static christmas.domain.user.EventTime.YEAR;
+import static christmas.domain.calendar.EventTime.MONTH;
+import static christmas.domain.calendar.EventTime.YEAR;
 import static christmas.domain.validate.CommonValidator.validateByCondition;
 import static christmas.domain.validate.ValidateMessage.DAY_EXCEPTION_MESSAGE;
 import static christmas.domain.validate.ValidateRegex.DAY_REGEX;

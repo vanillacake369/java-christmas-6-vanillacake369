@@ -28,4 +28,9 @@ public class WeekEndDiscountPolicy implements EventPolicy {
         int mainMenuCount = user.getMainMenuCount();
         resultDTO.updateAppliedEventPrice(this, DAY_DISCOUNT_PRICE.value * mainMenuCount);
     }
+
+    @Override
+    public String getPolicyName() {
+        return "주말 할인";
+    }
 }

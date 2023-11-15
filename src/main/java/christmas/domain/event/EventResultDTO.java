@@ -4,14 +4,12 @@ import christmas.domain.event.policy.EventPolicy;
 import christmas.domain.menu.Menu;
 import christmas.domain.user.Order;
 import christmas.domain.user.User;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Set;
 
 public class EventResultDTO {
     //  증정 메뉴
-    private final List<Menu> giveawayMenus = new ArrayList<>();
+    private final HashMap<Menu, Integer> giveawayMenus = new HashMap<>();
     //  혜택 내역
     private final HashMap<EventPolicy, Long> appliedDiscountPrices = new HashMap<>();
     //  할인 전 총 주문 금액
@@ -27,7 +25,7 @@ public class EventResultDTO {
     //  12월 이벤트 배지
     private EventBadge eventBadge = null;
 
-    public List<Menu> getGiveawayMenus() {
+    public HashMap<Menu, Integer> getGiveawayMenus() {
         return giveawayMenus;
     }
 
@@ -55,8 +53,8 @@ public class EventResultDTO {
         return appliedDiscountPrices;
     }
 
-    public void putGiveAwayMenus(Menu menu) {
-        this.giveawayMenus.add(menu);
+    public void putGiveAwayMenus(Menu menu, int count) {
+        this.giveawayMenus.put(menu, count);
     }
 
     public void updateAppliedEventPrice(EventPolicy policy, Long price) {
@@ -86,7 +84,8 @@ public class EventResultDTO {
     }
 
     void updateBenefitPriceSum() {
-        Long giftAwayPrice = giveawayMenus.stream()
+        Long giftAwayPrice = giveawayMenus.keySet()
+                .stream()
                 .map(Menu::getPrice)
                 .reduce(Long::sum)
                 .orElse(0L);

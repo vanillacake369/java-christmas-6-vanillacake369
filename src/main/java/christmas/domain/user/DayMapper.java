@@ -1,7 +1,7 @@
 package christmas.domain.user;
 
-import static christmas.domain.user.EventTime.MONTH;
-import static christmas.domain.user.EventTime.YEAR;
+import static christmas.domain.calendar.EventTime.MONTH;
+import static christmas.domain.calendar.EventTime.YEAR;
 
 import java.time.LocalDate;
 import java.time.format.TextStyle;

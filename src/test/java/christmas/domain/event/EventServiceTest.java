@@ -71,7 +71,7 @@ class EventServiceTest {
         Collection<Long> eventPrices = appliedEventPrice.values();
 
         // THEN
-        assertTrue(eventResultDTO.getGiveawayMenus().contains(CHAMPAGNE));
+        assertTrue(eventResultDTO.getGiveawayMenus().containsKey(CHAMPAGNE));
         assertTrue(discountPolicies.stream().anyMatch(ChristmasDiscountPolicy.class::isInstance));
         assertTrue(discountPolicies.stream().anyMatch(WeekDayDiscountPolicy.class::isInstance));
         assertTrue(discountPolicies.stream().anyMatch(SpecialDiscountPolicy.class::isInstance));
@@ -98,7 +98,7 @@ class EventServiceTest {
         Collection<Long> eventPrices = appliedEventPrice.values();
 
         // THEN
-        assertTrue(eventResultDTO.getGiveawayMenus().contains(CHAMPAGNE));
+        assertTrue(eventResultDTO.getGiveawayMenus().containsKey(CHAMPAGNE));
         assertTrue(discountPolicies.stream().anyMatch(ChristmasDiscountPolicy.class::isInstance));
         assertTrue(discountPolicies.stream().anyMatch(WeekEndDiscountPolicy.class::isInstance));
         assertTrue(eventPrices.contains(1_000L));

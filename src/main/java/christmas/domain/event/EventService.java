@@ -31,7 +31,5 @@ public class EventService {
     public void applyEvents(EventResultDTO resultDTO) {
         // 할인 적용
         eventBatch.applyEventPolicies(resultDTO);
-        // 이벤트 결과 최종 업데이트
-        resultDTO.updateEventResult(user);
     }
 }

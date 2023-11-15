@@ -25,7 +25,6 @@ public enum Menu {
     final MenuType menuType;
     final String menuName;
     final Long price;
-
     Menu(MenuType menuType, String menuName, Long price) {
         this.menuType = menuType;
         this.menuName = menuName;
@@ -42,6 +41,10 @@ public enum Menu {
         return Arrays.stream(values())
                 .filter(menu -> menu.menuName.equals(menuName))
                 .findFirst().orElse(null);
+    }
+
+    public String getMenuName() {
+        return menuName;
     }
 
     public Long getPrice() {

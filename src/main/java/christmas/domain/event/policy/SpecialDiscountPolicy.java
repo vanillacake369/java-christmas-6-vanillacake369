@@ -27,4 +27,9 @@ public class SpecialDiscountPolicy implements EventPolicy {
     public void applyEvent(EventResultDTO resultDTO) {
         resultDTO.updateAppliedEventPrice(this, SPECIAL_DISCOUNT_PRICE.value);
     }
+
+    @Override
+    public String getPolicyName() {
+        return "특별 할인";
+    }
 }

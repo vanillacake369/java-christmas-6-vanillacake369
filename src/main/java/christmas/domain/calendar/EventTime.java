@@ -1,4 +1,4 @@
-package christmas.domain.user;
+package christmas.domain.calendar;
 
 public enum EventTime {
     YEAR(2023),
@@ -8,5 +8,9 @@ public enum EventTime {
 
     EventTime(int time) {
         this.time = time;
+    }
+
+    public int getTime() {
+        return time;
     }
 }

@@ -28,4 +28,9 @@ public class WeekDayDiscountPolicy implements EventPolicy {
         int dessertMenuCount = user.getDessertMenuCount();
         resultDTO.updateAppliedEventPrice(this, DAY_DISCOUNT_PRICE.value * dessertMenuCount);
     }
+
+    @Override
+    public String getPolicyName() {
+        return "평일 할인";
+    }
 }

@@ -24,4 +24,8 @@ public enum EventBadge {
 
         return null;
     }
+
+    public String getBadgeKor() {
+        return badgeKor;
+    }
 }

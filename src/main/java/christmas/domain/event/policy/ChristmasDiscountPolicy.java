@@ -33,4 +33,9 @@ public class ChristmasDiscountPolicy implements EventPolicy {
         Long discountPrice = getDiscountPrice(user.getVisitDay());
         resultDTO.updateAppliedEventPrice(this, discountPrice);
     }
+
+    @Override
+    public String getPolicyName() {
+        return "크리스마스 디데이 할인";
+    }
 }
