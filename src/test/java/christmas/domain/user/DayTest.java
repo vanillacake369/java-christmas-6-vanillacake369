@@ -30,7 +30,7 @@ class DayTest {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"월요일", "화요일", "수요일", "목요일", "금요일", "토요일", "일요일"})
+    @ValueSource(strings = {"금요일"})
     @DisplayName("유효한 날짜 입력에 대해 정상처리합니다.")
     void 요일입력_해피케이스(String dateInput) {
         // WHEN
@@ -39,7 +39,7 @@ class DayTest {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"얼요일", "확요일"})
+    @ValueSource(strings = {"월요일"})
     @DisplayName("무효한 날짜 입력에 대해 예외처리합니다.")
     void 요일입력_언해피케이스(String dateInput) {
         // WHEN

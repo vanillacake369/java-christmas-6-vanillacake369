@@ -1,13 +1,13 @@
 package christmas.domain.user;
 
+import static christmas.domain.user.EventTime.MONTH;
+import static christmas.domain.user.EventTime.YEAR;
+
 import java.time.LocalDate;
 import java.time.format.TextStyle;
 import java.util.Locale;
 
 public final class DayMapper {
-    private final static int YEAR = 2023;
-    private final static int MONTH = 12;
-
     private DayMapper() {
     }
 
@@ -17,7 +17,7 @@ public final class DayMapper {
     }
 
     static String getDateByDay(int dayInput) {
-        LocalDate localDate = LocalDate.of(YEAR, MONTH, dayInput);
+        LocalDate localDate = LocalDate.of(YEAR.time, MONTH.time, dayInput);
         TextStyle textStyle = TextStyle.FULL;
         return localDate.getDayOfWeek().getDisplayName(textStyle, Locale.KOREAN);
     }
